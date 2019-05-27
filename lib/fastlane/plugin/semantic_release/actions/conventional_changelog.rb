@@ -251,7 +251,8 @@ module Fastlane
               bug: "Bug fixes",
               recycle: "Code refactoring",
               zap: "Performance improving",
-              art: "Building system",
+              art: "Code refactoring",
+              lipstick: "Updating the UI and style files",
               white_check_mark: "Testing",
               pencil: "Documentation",
               no_type: "Rest work"
