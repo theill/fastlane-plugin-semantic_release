@@ -146,7 +146,7 @@ module Fastlane
           FastlaneCore::ConfigItem.new(
             key: :releases,
             description: "Map types of commit to release (major, minor, patch)",
-            default_value: { fix: "patch", feat: "minor", bug: "patch", sparkles: "minor" },
+            default_value: { fix: "patch", feat: "minor", bug: "patch", lipstick: "patch", art: "patch", zap: "patch", sparkles: "minor" },
             type: Hash
           ),
           FastlaneCore::ConfigItem.new(
