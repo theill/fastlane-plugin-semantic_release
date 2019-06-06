@@ -14,18 +14,17 @@ module Fastlane
       end
 
       def self.parse_commit(params)
-        commit_subject = params[:commit_subject] || ''
-        commit_body = params[:commit_body] || ''
+        commit_subject = params[:commit_subject].strip
+        commit_body = params[:commit_body]
         releases = params[:releases]
         pattern = /^\:?(pencil|bug|sparkles|art|lipstick|recycle|zap|white_check_mark|docs|fix|feat|chore|style|refactor|perf|test)(\((.*)\))?(!?)\: (.*)/
-        merge_pattern = /^Merge/
         breaking_change_pattern = /BREAKING CHANGES?: (.*)/
 
         matched = commit_subject.match(pattern)
         result = {
           is_valid: false,
           subject: commit_subject,
-          is_merge: commit_subject.match?(merge_pattern),
+          is_merge: !(commit_subject =~ /^Merge/).nil?,
           type: 'no_type'
         }
 
